@@ -3,7 +3,8 @@ import wechat.pojo.AccessToken;
 import wechat.pojo.Button;  
 import wechat.pojo.CommonButton;  
 import wechat.pojo.ComplexButton;  
-import wechat.pojo.Menu;  
+import wechat.pojo.Menu;
+import wechat.pojo.ViewButton;
 import wechat.util.WechatUtil;  
 import org.slf4j.Logger;  
 import org.slf4j.LoggerFactory;  
@@ -52,6 +53,11 @@ public class MenuManager {
         btn12.setType("click");  
         btn12.setKey("12");  
   
+        ViewButton btn13 = new ViewButton();  
+        btn13.setName("View æ¿˝");  
+        btn13.setType("view");  
+        btn13.setUrl("http://baidu.com");  
+        
         CommonButton btn21 = new CommonButton();  
         btn21.setName("‘§‘º≈„’Ô");  
         btn21.setType("click");  
@@ -64,7 +70,8 @@ public class MenuManager {
   
         ComplexButton mainBtn1 = new ComplexButton();  
         mainBtn1.setName("‘∆øµªÔ∞È");  
-        mainBtn1.setSub_button(new CommonButton[] { btn11, btn12 });  
+        mainBtn1.setSub_button(new Button[] { btn11, btn12, btn13 }); 
+        
   
         Menu menu = new Menu();  
         menu.setButton(new Button[] { mainBtn1, btn21, btn31});  
